@@ -1,1 +1,23 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="icon" href="favicon.ico"><title>vue</title><link href="css/app.f9b9e8a7.css" rel="preload" as="style"><link href="js/app.609fa27e.js" rel="preload" as="script"><link href="js/chunk-vendors.5a5a5781.js" rel="preload" as="script"><link href="css/app.f9b9e8a7.css" rel="stylesheet"></head><body><noscript><strong>We're sorry but vue doesn't work properly without JavaScript enabled. Please enable it to continue.</strong></noscript><div id="app"></div><script src="js/chunk-vendors.5a5a5781.js"></script><script src="js/app.609fa27e.js"></script></body></html>
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="icon" href="favicon.ico"><link rel="stylesheet" type="text/css" href="http://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css"><link rel="stylesheet" type="text/css" href="styles.css"><link href="css/app.3bb0b6ec.css" rel="preload" as="style"><link href="js/app.0ec67d6d.js" rel="preload" as="script"><link href="js/chunk-vendors.a6c22e69.js" rel="preload" as="script"><link href="css/app.3bb0b6ec.css" rel="stylesheet"></head><body><div id="text"><h1>{{ text }}</h1></div><button id="btn" v-on:click="click">클릭</button><script src="http://code.jquery.com/jquery-3.3.1.min.js"></script><script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script><script src="http://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script><script>var vue1 = new Vue({
+      el: "#text",
+      data: {
+        text: "어뮤즈트래블은 돌봄여행을 제공하는 컨시어지 여행사입니다"
+      },
+
+    });
+
+    var vue2 = new Vue({
+      el: "#btn",
+      methods: {
+        click: function () {
+          var textArray = vue1.text.split("");
+          var popText = textArray.shift();
+          textArray.push(popText);
+          console.log(textArray);
+          vue1.text = textArray.join("");
+          toastr.success("", '버튼을 클릭했습니다.', {
+            timeOut: 1000
+          });
+        },
+      }
+    })</script><script src="js/chunk-vendors.a6c22e69.js"></script><script src="js/app.0ec67d6d.js"></script></body></html>
