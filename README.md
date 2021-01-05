@@ -1,5 +1,11 @@
 # 실행 방법
 
-## npm run serve
+## 로컬 실행 시
+```
+npm install
+npm run serve
+```
 
+## GitHub Pages
 
+ https://loger-kcj.github.io/vue/
