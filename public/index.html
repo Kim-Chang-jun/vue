@@ -1,17 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <link rel="icon" href="<%= BASE_URL %>favicon.ico">
-    <title><%= htmlWebpackPlugin.options.title %></title>
-  </head>
-  <body>
-    <noscript>
-      <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
-    </noscript>
-    <div id="app"></div>
-    <!-- built files will be auto injected -->
-  </body>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <link rel="icon" href="<%= BASE_URL %>favicon.ico">
+  <link rel="stylesheet" type="text/css"
+    href="http://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" />
+  <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+
+<body>
+  <div id="text">
+    <h1>{{ text }}</h1>
+  </div>
+  <button id="btn" v-on:click="click">클릭</button>
+  </div>
+
+
+  <script type="text/javascript" src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
+  <script>
+    var vue1 = new Vue({
+      el: "#text",
+      data: {
+        text: "어뮤즈트래블은 돌봄여행을 제공하는 컨시어지 여행사입니다"
+      },
+
+    });
+
+    var vue2 = new Vue({
+      el: "#btn",
+      methods: {
+        click: function () {
+          var textArray = vue1.text.split("");
+          var popText = textArray.shift();
+          textArray.push(popText);
+          console.log(textArray);
+          vue1.text = textArray.join("");
+          toastr.success("", '버튼을 클릭했습니다.', {
+            timeOut: 1000
+          });
+        },
+      }
+    })
+  </script>
+  <!-- built files will be auto injected -->
+</body>
+
 </html>

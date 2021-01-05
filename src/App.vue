@@ -1,7 +1,8 @@
 <template>
   <div id="app">
-   <!--  <img alt="Vue logo" src="./assets/logo.png" /> -->
-    <HelloWorld msg="Welcome to Your Vue.js App" />
+    <HelloWorld
+      msg="어뮤즈트래블은 돌봄여행을 제공하는 컨시어지 여행사입니다"
+    />
   </div>
 </template>
 
@@ -18,11 +19,12 @@ export default {
 
 <style>
 #app {
+  height: 100vh;
+  display: flex;
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  background-color: brown;
 }
 </style>
