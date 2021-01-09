@@ -8,4 +8,5 @@ npm run serve
 
 ## GitHub Pages
 
- https://loger-kcj.github.io/vue/
+ https://kim-chang-jun.github.io/vue/
+
